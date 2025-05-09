@@ -1,36 +1,69 @@
-Linked List Assignment
-What the Code Does
-We have three classes in linked_list.py:
+# Linked List Assignment
 
-Node: Used for the singly linked list. It holds data (like a number) and a link to the next node.
-DoublyNode: Used for the doubly linked list. Each node holds data and links to both the next and previous nodes.
-SinglyLinkedList: This is a singly linked list. It can:
-append: Add a node to the end.
-prepend: Add a node to the start.
-delete: Remove a node with a certain value.
-display: Show the whole list.
-search: Find where a value is in the list.
+## Overview
 
+This project implements both **singly** and **doubly** linked lists in Python, showcasing common operations like insertion, deletion, searching, and displaying list contents.
 
-DoublyLinkedList: This is the doubly linked list. It does the same stuff as the singly linked list, but nodes are connected both ways (forward and backward).
+---
 
-The code has a test part at the end that tries out both lists by:
+## File: `linked_list.py`
 
-Adding the numbers 1, 2, and 3.
-Adding 0 at the start.
-Showing the list.
-Finding where 2 is.
-Deleting 2 and showing the list again.
+### Classes
 
-Results from the Code
-Singly Linked List:
-List: 0 -> 1 -> 2 -> 3
-Find 2: 2
-After delete 2: 0 -> 1 -> 3
+#### `Node`
+Represents a node in a singly linked list.
+- **Attributes:**
+  - `data`: The value (e.g., a number).
+  - `next`: A reference to the next node.
 
-Doubly Linked List:
-List: 0 <-> 1 <-> 2 <-> 3
-Find 2: 2
-After delete 2: 0 <-> 1 <-> 3
+#### `DoublyNode`
+Represents a node in a doubly linked list.
+- **Attributes:**
+  - `data`: The value.
+  - `next`: A reference to the next node.
+  - `prev`: A reference to the previous node.
 
-The singly linked list uses -> to show nodes pointing forward. The doubly linked list uses <-> because nodes link both ways. The “Find 2: 2” means 2 is at position 2 (starting from 0). After deleting 2, the lists are just 0, 1, and 3.
+#### `SinglyLinkedList`
+A class for managing a singly linked list.
+- **Methods:**
+  - `append(value)`: Add a node to the end.
+  - `prepend(value)`: Add a node to the beginning.
+  - `delete(value)`: Remove the first node with the given value.
+  - `search(value)`: Find the position (index) of a value in the list.
+  - `display()`: Show the current list.
+
+#### `DoublyLinkedList`
+A class for managing a doubly linked list.
+- **Methods:** (same as `SinglyLinkedList`)
+  - `append(value)`
+  - `prepend(value)`
+  - `delete(value)`
+  - `search(value)`
+  - `display()`
+
+---
+
+## Test Cases
+
+Both linked lists are tested with the following steps:
+
+1. Append values: `1`, `2`, `3`
+2. Prepend value: `0`
+3. Display the list
+4. Search for value `2`
+5. Delete value `2`
+6. Display the list again
+
+---
+
+## Sample Output
+### Singly Linked List
+- List: 0 -> 1 -> 2 -> 3
+- Find 2: 2
+- After delete 2: 0 -> 1 -> 3
+
+### Doubly Linked List
+- List: 0 <-> 1 <-> 2 <-> 3
+- Find 2: 2
+- After delete 2: 0 <-> 1 <-> 3
+
